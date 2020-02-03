@@ -1,6 +1,7 @@
 package cli
 
 import (
+	"fmt"
 	"net"
 	"os"
 	"time"
@@ -55,7 +56,7 @@ func Proxy() error { // nolint: funlen
 
 		diff, err := ntp.Fetch()
 		if err != nil {
-			Fatal("Cannot fetch time data from NTP")
+			Fatal(fmt.Sprintf("Cannot fetch time data from NTP, error: %s", err))
 		}
 
 		if diff > time.Second {
