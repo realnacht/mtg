@@ -56,7 +56,7 @@ func Proxy() error { // nolint: funlen
 
 		diff, err := ntp.Fetch()
 		if err != nil {
-			Fatal(fmt.Sprintf("Cannot fetch time data from NTP, error: %s", err))
+			Fatal(fmt.Sprintf("error: %s", err))
 		}
 
 		if diff > time.Second {
